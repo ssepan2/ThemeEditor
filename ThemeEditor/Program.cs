@@ -1,0 +1,166 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Diagnostics;
+using System.Reflection;
+using System.Windows.Forms;
+//using Model;
+using ThemeEditorLibrary;
+using Ssepan.Application;
+using Ssepan.Application.WinConsole;
+using Ssepan.Utility;
+
+namespace ThemeEditor
+{
+    static class Program
+    {
+        #region Declarations
+        public const String APP_NAME = "Theme Editor (Alpha)";
+        #endregion Declarations
+
+        #region INotifyPropertyChanged
+        public static event PropertyChangedEventHandler PropertyChanged;
+        public static void OnPropertyChanged(String propertyName)
+        {
+            try
+            {
+                if (PropertyChanged != null)
+                {
+                    PropertyChanged(null, new PropertyChangedEventArgs(propertyName));
+                }
+            }
+            catch (Exception ex)
+            {
+                Log.Write(ex, MethodBase.GetCurrentMethod(), EventLogEntryType.Error);
+
+                throw;
+            }
+        }
+        #endregion INotifyPropertyChanged
+
+        #region PropertyChangedEventHandlerDelegate
+        /// <summary>
+        /// Note: property changes update UI manually.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public static void PropertyChangedEventHandlerDelegate
+        (
+            Object sender,
+            PropertyChangedEventArgs e
+        )
+        {
+            try
+            {
+                if (e.PropertyName == "Filename")
+                {
+                    ConsoleApplication.defaultOutputDelegate(String.Format("{0}", Filename));
+                }
+            }
+            catch (Exception ex)
+            {
+                Log.Write(ex, MethodBase.GetCurrentMethod(), EventLogEntryType.Error);
+            }
+        }
+        #endregion PropertyChangedEventHandlerDelegate
+
+        #region Properties
+        private static String _Filename = default(String);
+        public static String Filename
+        {
+            get { return _Filename; }
+            set
+            {
+                _Filename = value;
+                OnPropertyChanged("Filename");
+            }
+        }
+        #endregion Properties
+
+        #region Methods
+        /// <summary>
+        /// The main entry point for the application.
+        /// </summary>
+        /// <param name="args"></param>
+        /// <returns>Int32</returns>
+        [STAThread]
+        static Int32 Main(String[] args)
+        {
+            //default to fail code
+            Int32 returnValue = -1;
+            
+            try
+            {
+                //define default output delegate
+                ConsoleApplication.defaultOutputDelegate = ConsoleApplication.messageBoxWrapperOutputDelegate;
+
+                //load, parse, run switches
+                DoSwitches(args);
+
+                InitModelAndSettings();
+
+                Application.EnableVisualStyles();
+                Application.SetCompatibleTextRenderingDefault(false);
+                Application.Run(new ThemeEditorView(args));
+
+                //return success code
+                returnValue = 0;
+            }
+            catch (Exception ex)
+            {
+                Log.Write(ex, MethodBase.GetCurrentMethod(), EventLogEntryType.Error);
+            }
+            return returnValue;
+        }
+
+        #region FormAppBase
+        /// <summary>
+        /// Note: switches are processed before Model or Settings are accessed.
+        /// </summary>
+        /// <param name="args"></param>
+        static void DoSwitches(String[] args)
+        {
+            //define supported switches
+            // -t -f:"filename" -h
+            ConsoleApplication.DoCommandLineSwitches
+            (
+                args,
+                new CommandLineSwitch[]  
+                { 
+                    new CommandLineSwitch("t", "t sets t Data Mode.", false, t),
+                    new CommandLineSwitch("T", "T sets t Data Mode.", false, t),
+                    //new CommandLineSwitch("H", "H invokes the Help command.", false, ConsoleApplication.Help)//may already be loaded
+                }
+            );
+        }
+
+        static void InitModelAndSettings()
+        {
+            //create Settings before first use by Model
+            if (SettingsController<ThemeEditorSettings>.Settings == null)
+            {
+                SettingsController<ThemeEditorSettings>.New();
+            }
+            //Model properties rely on Settings, so don't call Refresh before this is run.
+            if (ModelController<ThemeEditorModel>.Model == null)
+            {
+                ModelController<ThemeEditorModel>.New();
+            }
+        }
+        #endregion FormAppBase
+
+        #region CommandLineSwitch Action Delegates
+        /// Set t Data Mode flag
+        /// command line Action Delegate
+        /// Do not change; this delegate is triggered by alpha commnd line switch.
+        /// </summary>
+        /// <param name="value"></param>
+        /// <param name="outputDelegate"></param>
+        public static void t(String value, Action<String> outputDelegate)
+        {
+            ThemeEditorModel.TestDataMode = true;
+        }
+        #endregion CommandLineSwitch Action Delegates
+        #endregion Methods
+    }
+}
