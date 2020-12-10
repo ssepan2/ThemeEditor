@@ -497,14 +497,14 @@ namespace ThemeEditor
             this.toolStripSeparator3,
             this.menuFileExit});
             this.menuFile.Name = "menuFile";
-            this.menuFile.Size = new System.Drawing.Size(35, 20);
+            this.menuFile.Size = new System.Drawing.Size(37, 20);
             this.menuFile.Text = "&File";
             // 
             // menuFileNew
             // 
             this.menuFileNew.Enabled = false;
             this.menuFileNew.Name = "menuFileNew";
-            this.menuFileNew.Size = new System.Drawing.Size(140, 22);
+            this.menuFileNew.Size = new System.Drawing.Size(146, 22);
             this.menuFileNew.Text = "&New";
             // 
             // menuFileOpen
@@ -512,7 +512,7 @@ namespace ThemeEditor
             this.menuFileOpen.Enabled = false;
             this.menuFileOpen.Name = "menuFileOpen";
             this.menuFileOpen.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
-            this.menuFileOpen.Size = new System.Drawing.Size(140, 22);
+            this.menuFileOpen.Size = new System.Drawing.Size(146, 22);
             this.menuFileOpen.Text = "&Open";
             // 
             // menuFileSave
@@ -520,38 +520,38 @@ namespace ThemeEditor
             this.menuFileSave.Enabled = false;
             this.menuFileSave.Name = "menuFileSave";
             this.menuFileSave.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-            this.menuFileSave.Size = new System.Drawing.Size(140, 22);
+            this.menuFileSave.Size = new System.Drawing.Size(146, 22);
             this.menuFileSave.Text = "&Save";
             // 
             // menuFileSaveAs
             // 
             this.menuFileSaveAs.Enabled = false;
             this.menuFileSaveAs.Name = "menuFileSaveAs";
-            this.menuFileSaveAs.Size = new System.Drawing.Size(140, 22);
+            this.menuFileSaveAs.Size = new System.Drawing.Size(146, 22);
             this.menuFileSaveAs.Text = "Save &As...";
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(137, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(143, 6);
             // 
             // menuFilePrint
             // 
             this.menuFilePrint.Enabled = false;
             this.menuFilePrint.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.menuFilePrint.Name = "menuFilePrint";
-            this.menuFilePrint.Size = new System.Drawing.Size(140, 22);
+            this.menuFilePrint.Size = new System.Drawing.Size(146, 22);
             this.menuFilePrint.Text = "&Print...";
             // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(137, 6);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(143, 6);
             // 
             // menuFileExit
             // 
             this.menuFileExit.Name = "menuFileExit";
-            this.menuFileExit.Size = new System.Drawing.Size(140, 22);
+            this.menuFileExit.Size = new System.Drawing.Size(146, 22);
             this.menuFileExit.Text = "E&xit";
             this.menuFileExit.Click += new System.EventHandler(this.menuFileExit_Click);
             // 
@@ -561,20 +561,20 @@ namespace ThemeEditor
             this.toolStripSeparator4,
             this.menuEditProperties});
             this.menuEdit.Name = "menuEdit";
-            this.menuEdit.Size = new System.Drawing.Size(37, 20);
+            this.menuEdit.Size = new System.Drawing.Size(39, 20);
             this.menuEdit.Text = "&Edit";
             // 
             // toolStripSeparator4
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(132, 6);
+            this.toolStripSeparator4.Size = new System.Drawing.Size(133, 6);
             // 
             // menuEditProperties
             // 
             this.menuEditProperties.Image = ((System.Drawing.Image)(resources.GetObject("menuEditProperties.Image")));
             this.menuEditProperties.ImageTransparentColor = System.Drawing.Color.Black;
             this.menuEditProperties.Name = "menuEditProperties";
-            this.menuEditProperties.Size = new System.Drawing.Size(135, 22);
+            this.menuEditProperties.Size = new System.Drawing.Size(136, 22);
             this.menuEditProperties.Text = "P&roperties...";
             this.menuEditProperties.Click += new System.EventHandler(this.menuEditProperties_Click);
             // 
@@ -583,14 +583,14 @@ namespace ThemeEditor
             this.menuHelp.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menuHelpAbout});
             this.menuHelp.Name = "menuHelp";
-            this.menuHelp.Size = new System.Drawing.Size(40, 20);
+            this.menuHelp.Size = new System.Drawing.Size(44, 20);
             this.menuHelp.Text = "&Help";
             this.menuHelp.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // menuHelpAbout
             // 
             this.menuHelpAbout.Name = "menuHelpAbout";
-            this.menuHelpAbout.Size = new System.Drawing.Size(184, 22);
+            this.menuHelpAbout.Size = new System.Drawing.Size(193, 22);
             this.menuHelpAbout.Text = "&About Theme Editor ...";
             this.menuHelpAbout.Click += new System.EventHandler(this.menuHelpAbout_Click);
             // 
@@ -689,7 +689,7 @@ namespace ThemeEditor
             this.trkForeground.Location = new System.Drawing.Point(329, 224);
             this.trkForeground.Maximum = 255;
             this.trkForeground.Name = "trkForeground";
-            this.trkForeground.Size = new System.Drawing.Size(104, 42);
+            this.trkForeground.Size = new System.Drawing.Size(104, 45);
             this.trkForeground.TabIndex = 118;
             this.trkForeground.TickFrequency = 26;
             this.toolTip1.SetToolTip(this.trkForeground, "Slide to change Foreground Alpha (Opacity)");
@@ -702,7 +702,7 @@ namespace ThemeEditor
             this.trkBackground.Location = new System.Drawing.Point(329, 285);
             this.trkBackground.Maximum = 255;
             this.trkBackground.Name = "trkBackground";
-            this.trkBackground.Size = new System.Drawing.Size(104, 42);
+            this.trkBackground.Size = new System.Drawing.Size(104, 45);
             this.trkBackground.TabIndex = 119;
             this.trkBackground.TickFrequency = 26;
             this.toolTip1.SetToolTip(this.trkBackground, "Slide to change Background Alpha (Opacity)");

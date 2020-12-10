@@ -34,7 +34,7 @@ namespace ThemeEditor
             //call viewmodel here
             if (CanExecute(null))
             {
-                _ThemeEditorViewModel.Properties();
+                _ThemeEditorViewModel.EditProperties();
             }
         }
     }

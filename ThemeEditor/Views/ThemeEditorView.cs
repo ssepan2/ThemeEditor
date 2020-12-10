@@ -10,7 +10,6 @@ using System.Windows.Forms;
 using Microsoft.Win32;
 using ThemeEditorLibrary;
 using Ssepan.Application;
-using Ssepan.Application.WinForms;
 using Ssepan.Io;
 using Ssepan.Utility;
 
@@ -865,6 +864,7 @@ namespace ThemeEditor
         protected void _Run()
         {
             //MessageBox.Show("running", "MVC", MessageBoxButtons.OKCancel, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+            ValidatingColor();
         }
         #endregion FormAppBase
         

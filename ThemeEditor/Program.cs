@@ -7,7 +7,6 @@ using System.Windows.Forms;
 //using Model;
 using ThemeEditorLibrary;
 using Ssepan.Application;
-using Ssepan.Application.WinConsole;
 using Ssepan.Utility;
 
 namespace ThemeEditor

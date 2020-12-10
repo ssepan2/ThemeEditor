@@ -33,7 +33,7 @@ namespace ThemeEditor
             //call viewmodel here
             if (CanExecute(null))
             {
-                _ThemeEditorViewModel.HelpAbout();
+                _ThemeEditorViewModel.HelpAbout<AssemblyInfo>();
             }
         }
     }

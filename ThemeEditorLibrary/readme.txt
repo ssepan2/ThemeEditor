@@ -14,9 +14,14 @@ Usage notes:
 
 
 Enhancements:
+
+~2.2:
+~Updated Ssepan.* to 2.6
+~updated to Framework 4.8
+~converted to SDK style project
+
 2.1:
-~TODO:Refactored to use new MVVM / MVC hybrid.
-~TODO:Updated Ssepan.* to 2.6
+~Updated Ssepan.* to 2.6
 
 2.0:
 ~Moved domain classes into class library (DLL).
