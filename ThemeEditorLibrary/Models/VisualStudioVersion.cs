@@ -4,11 +4,13 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Ssepan.Application;
 
 namespace ThemeEditorLibrary
 {
     [TypeConverter(typeof(ExpandableObjectConverter))]
-    public class VisualStudioVersion
+    public class VisualStudioVersion :
+        SettingsComponentBase
     {
         #region Declarations
         public const String VISUALSTUDIO_VERSIONNUMBER_2012 = @"11.0";

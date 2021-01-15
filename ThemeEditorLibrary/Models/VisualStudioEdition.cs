@@ -4,11 +4,13 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Ssepan.Application;
 
 namespace ThemeEditorLibrary
 {
     [TypeConverter(typeof(ExpandableObjectConverter))]
-    public class VisualStudioEdition
+    public class VisualStudioEdition :
+        SettingsComponentBase
     {
         #region Declarations
         public const String REGISTRY_THEMES_EDITIONKEY_OTHER = @"VisualStudio";

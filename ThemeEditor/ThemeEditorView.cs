@@ -40,6 +40,12 @@ namespace ThemeEditor
         {
             try
             {
+                //Lesson; don't pput your views in a folder, ot it will break the form designer when it 
+                //  tried to resolve resources
+                //Label l = new Label();
+                //System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ThemeEditorView));
+                //resources.ApplyResources( l, "test");
+
                 InitializeComponent();
 
                 ////(re)define default output delegate
@@ -743,8 +749,13 @@ namespace ThemeEditor
         {
             try
             {
-                //subscribe view to model notifications
-                ModelController<ThemeEditorModel>.Model.PropertyChanged += PropertyChangedEventHandlerDelegate;
+                //tell controller how model should notify view about non-persisted properties AND including model properties that may be part of settings
+                ModelController<ThemeEditorModel>.DefaultHandler = PropertyChangedEventHandlerDelegate;
+
+                //tell controller how settings should notify view about persisted properties
+                SettingsController<ThemeEditorSettings>.DefaultHandler = PropertyChangedEventHandlerDelegate;
+
+                InitModelAndSettings();
 
                 FileDialogInfo settingsFileDialogInfo =
                     new FileDialogInfo
@@ -825,6 +836,20 @@ namespace ThemeEditor
                     ViewModel.ErrorMessage = ex.Message;
                 }
                 Log.Write(ex, MethodBase.GetCurrentMethod(), EventLogEntryType.Error);
+            }
+        }
+
+        protected void InitModelAndSettings()
+        {
+            //create Settings before first use by Model
+            if (SettingsController<ThemeEditorSettings>.Settings == null)
+            {
+                SettingsController<ThemeEditorSettings>.New();
+            }
+            //Model properties rely on Settings, so don't call Refresh before this is run.
+            if (ModelController<ThemeEditorModel>.Model == null)
+            {
+                ModelController<ThemeEditorModel>.New();
             }
         }
 

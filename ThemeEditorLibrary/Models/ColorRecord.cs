@@ -7,33 +7,35 @@ using System.Runtime.InteropServices;
 using System.Reflection;
 using System.Text;
 using Microsoft.Win32;
+using Ssepan.Application;
 using Ssepan.Utility;
 
 namespace ThemeEditorLibrary
 {
     [TypeConverter(typeof(ExpandableObjectConverter))]
     public class ColorRecord :
-        INotifyPropertyChanged
+        SettingsComponentBase//,
+        //INotifyPropertyChanged
     {
 
         #region INotifyPropertyChanged Members
-        public event PropertyChangedEventHandler PropertyChanged;
-        protected void OnPropertyChanged(String propertyName)
-        {
-            try
-            {
-                if (this.PropertyChanged != null)
-                {
-                    this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-                }
+        //public event PropertyChangedEventHandler PropertyChanged;
+        //protected void OnPropertyChanged(String propertyName)
+        //{
+        //    try
+        //    {
+        //        if (this.PropertyChanged != null)
+        //        {
+        //            this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+        //        }
 
-            }
-            catch (Exception ex)
-            {
-                Log.Write(ex, MethodBase.GetCurrentMethod(), EventLogEntryType.Error);
-                throw;
-            }
-        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        Log.Write(ex, MethodBase.GetCurrentMethod(), EventLogEntryType.Error);
+        //        throw;
+        //    }
+        //}
         #endregion
 
         #region Properties

@@ -96,8 +96,6 @@ namespace ThemeEditor
                 //load, parse, run switches
                 DoSwitches(args);
 
-                InitModelAndSettings();
-
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);
                 Application.Run(new ThemeEditorView(args));
@@ -131,20 +129,6 @@ namespace ThemeEditor
                     //new CommandLineSwitch("H", "H invokes the Help command.", false, ConsoleApplication.Help)//may already be loaded
                 }
             );
-        }
-
-        static void InitModelAndSettings()
-        {
-            //create Settings before first use by Model
-            if (SettingsController<ThemeEditorSettings>.Settings == null)
-            {
-                SettingsController<ThemeEditorSettings>.New();
-            }
-            //Model properties rely on Settings, so don't call Refresh before this is run.
-            if (ModelController<ThemeEditorModel>.Model == null)
-            {
-                ModelController<ThemeEditorModel>.New();
-            }
         }
         #endregion FormAppBase
 

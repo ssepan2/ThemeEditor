@@ -6,13 +6,15 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using Microsoft.Win32;
+using Ssepan.Application;
 using Ssepan.Utility;
 
 namespace ThemeEditorLibrary
 {
     [TypeConverter(typeof(ExpandableObjectConverter))]
     public class ThemeInfo :
-        INotifyPropertyChanged
+        SettingsComponentBase//,
+        //INotifyPropertyChanged
     {
         #region Declarations
         private const String FORMAT_DATESTAMP = "yyyy-MM-dd.";
@@ -36,23 +38,23 @@ namespace ThemeEditorLibrary
         #endregion Constructors
 
         #region INotifyPropertyChanged Members
-        public event PropertyChangedEventHandler PropertyChanged;
-        protected void OnPropertyChanged(String propertyName)
-        {
-            try
-            {
-                if (this.PropertyChanged != null)
-                {
-                    this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-                }
+        //public event PropertyChangedEventHandler PropertyChanged;
+        //protected void OnPropertyChanged(String propertyName)
+        //{
+        //    try
+        //    {
+        //        if (this.PropertyChanged != null)
+        //        {
+        //            this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+        //        }
 
-            }
-            catch (Exception ex)
-            {
-                Log.Write(ex, MethodBase.GetCurrentMethod(), EventLogEntryType.Error);
-                throw;
-            }
-        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        Log.Write(ex, MethodBase.GetCurrentMethod(), EventLogEntryType.Error);
+        //        throw;
+        //    }
+        //}
         #endregion
 
         #region Properties

@@ -62,7 +62,7 @@ namespace ThemeEditorLibrary
         /// </summary>
         /// <param name="anotherSettings"></param>
         /// <returns></returns>
-        public override Boolean Equals(IModel other)
+        public override Boolean Equals(IModelComponent other)
         {
             Boolean returnValue = default(Boolean);
             ThemeEditorModel otherModel = default(ThemeEditorModel);
