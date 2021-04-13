@@ -1,19 +1,17 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.30717.126
-MinimumVisualStudioVersion = 10.0.40219.1
+# Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThemeEditor", "ThemeEditor\ThemeEditor.csproj", "{FDFAF6A4-E371-49E8-97A8-54D1884489F6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ssepan.Application", "..\Ssepan.Application\Ssepan.Application.csproj", "{C69040CF-5ACD-4F55-8540-49FB7C2A7AA2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ssepan.Utility", "..\Ssepan.Utility\Ssepan.Utility\Ssepan.Utility.csproj", "{9C11D8DD-E335-4FE3-AAE6-5C3B17732890}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThemeEditorLibrary", "ThemeEditorLibrary\ThemeEditorLibrary.csproj", "{7905403E-751F-44E9-8FFE-4F65C7572FB1}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ssepan.Io", "..\Ssepan.Io\Ssepan.Io.csproj", "{9EFE2EC6-F48E-4E4E-927F-068B54210E09}"
 EndProject
 Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "ThemeEditorSetup", "ThemeEditorSetup\ThemeEditorSetup.vdproj", "{DE29144C-93E4-4190-A4FF-044A205B4610}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ssepan.Utility", "..\Ssepan.Utility\Ssepan.Utility\Ssepan.Utility.csproj", "{9C11D8DD-E335-4FE3-AAE6-5C3B17732890}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ssepan.Application", "..\Ssepan.Application\Ssepan.Application.csproj", "{C69040CF-5ACD-4F55-8540-49FB7C2A7AA2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,6 +23,14 @@ Global
 		{FDFAF6A4-E371-49E8-97A8-54D1884489F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FDFAF6A4-E371-49E8-97A8-54D1884489F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FDFAF6A4-E371-49E8-97A8-54D1884489F6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C69040CF-5ACD-4F55-8540-49FB7C2A7AA2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C69040CF-5ACD-4F55-8540-49FB7C2A7AA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C69040CF-5ACD-4F55-8540-49FB7C2A7AA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C69040CF-5ACD-4F55-8540-49FB7C2A7AA2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9C11D8DD-E335-4FE3-AAE6-5C3B17732890}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C11D8DD-E335-4FE3-AAE6-5C3B17732890}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C11D8DD-E335-4FE3-AAE6-5C3B17732890}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C11D8DD-E335-4FE3-AAE6-5C3B17732890}.Release|Any CPU.Build.0 = Release|Any CPU
 		{7905403E-751F-44E9-8FFE-4F65C7572FB1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{7905403E-751F-44E9-8FFE-4F65C7572FB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7905403E-751F-44E9-8FFE-4F65C7572FB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -35,19 +41,8 @@ Global
 		{9EFE2EC6-F48E-4E4E-927F-068B54210E09}.Release|Any CPU.Build.0 = Release|Any CPU
 		{DE29144C-93E4-4190-A4FF-044A205B4610}.Debug|Any CPU.ActiveCfg = Debug
 		{DE29144C-93E4-4190-A4FF-044A205B4610}.Release|Any CPU.ActiveCfg = Release
-		{9C11D8DD-E335-4FE3-AAE6-5C3B17732890}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9C11D8DD-E335-4FE3-AAE6-5C3B17732890}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9C11D8DD-E335-4FE3-AAE6-5C3B17732890}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9C11D8DD-E335-4FE3-AAE6-5C3B17732890}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C69040CF-5ACD-4F55-8540-49FB7C2A7AA2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C69040CF-5ACD-4F55-8540-49FB7C2A7AA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C69040CF-5ACD-4F55-8540-49FB7C2A7AA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C69040CF-5ACD-4F55-8540-49FB7C2A7AA2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {CC8F9F2C-B1FE-403C-8648-B5C37C16D186}
 	EndGlobalSection
 EndGlobal
